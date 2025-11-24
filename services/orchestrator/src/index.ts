@@ -11,20 +11,24 @@ import * as envModule from '../../../packages/config/src/index';
 import * as dbModule from '../../../packages/db/src/index';
 import * as types from '../../../packages/types/src/index';
 import type { MessageCreate } from '../../../packages/types/src/index';
+import * as loggerModule from '../../../packages/logger/src/index';
 
 const env =
   (envModule as any).env ??
   (envModule as any).default.env ??
   envModule;
 
-console.log("FINAL ENV →", env);
-
 const prisma = (dbModule as any).prisma ?? (dbModule as any).default;
 const MessageCreateSchema =
   (types as any).MessageCreateSchema ?? (types as any).default?.MessageCreateSchema;
 
+const baseLogger =
+  (loggerModule as any).logger ?? (loggerModule as any).default ?? loggerModule;
+
+const logger = baseLogger.child({ service: 'orchestrator' });
+
 const app = Fastify({
-  logger: true, // ✅ Fastify 기본 로거 사용
+  logger,
 });
 
 app.setValidatorCompiler(validatorCompiler);
