@@ -8,23 +8,8 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "strict": true,
-    "baseUrl": ".",
-    "paths": {
-      "@wa/config": [
-        "packages/config/src"
-      ],
-      "@wa/logger": [
-        "packages/logger/src"
-      ],
-      "@wa/db": [
-        "packages/db/src"
-      ],
-      "@wa/types": [
-        "packages/types/src"
-      ],
-      "@wa/http": [
-        "packages/http/src"
-      ]
-    }
+    "types": ["node"],
+    "declaration": true,
+    "declarationMap": true
   }
 }

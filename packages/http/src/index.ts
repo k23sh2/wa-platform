@@ -1,6 +1,5 @@
-
+import { logger } from '../../logger/src';
 import { request } from 'undici';
-import { logger } from '@wa/logger';
 
 export async function httpPost<T>(url: string, body: unknown): Promise<T> {
   const res = await request(url, {

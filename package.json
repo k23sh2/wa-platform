@@ -13,6 +13,7 @@
     "prisma:migrate": "pnpm --filter @wa/db prisma:migrate"
   },
   "devDependencies": {
+    "@types/node": "^24.10.1",
     "concurrently": "^9.0.0",
     "typescript": "^5.6.3"
   }
