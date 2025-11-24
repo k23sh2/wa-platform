@@ -1,0 +1,23 @@
+{
+  "name": "@wa/gateway",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "fastify": "^5.0.0",
+    "@fastify/http-proxy": "^10.0.2",
+    "@wa/config": "workspace:*",
+    "@wa/logger": "workspace:*",
+    "@wa/http": "workspace:*",
+    "@wa/types": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

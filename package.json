@@ -1,0 +1,19 @@
+{
+  "name": "wa-platform",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n gateway,orchestrator -c cyan,magenta \"pnpm --filter @wa/gateway dev\" \"pnpm --filter @wa/orchestrator dev\"",
+    "build": "pnpm -r build",
+    "prisma:generate": "pnpm --filter @wa/db prisma:generate",
+    "prisma:migrate": "pnpm --filter @wa/db prisma:migrate"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0",
+    "typescript": "^5.6.3"
+  }
+}

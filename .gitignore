@@ -1,0 +1,8 @@
+
+node_modules
+dist
+.env
+.prisma
+node_modules
+dist
+.env
