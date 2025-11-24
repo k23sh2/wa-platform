@@ -5,6 +5,7 @@ import proxy from '@fastify/http-proxy';
 import * as envModule from '../../../packages/config/src/index';
 import * as types from '../../../packages/types/src/index';
 import * as http from '../../../packages/http/src/index';
+import { logger as baseLogger } from '../../../packages/logger/src';
 
 const env =
   (envModule as any).env ??
@@ -14,10 +15,11 @@ const env =
 const { MessageCreateSchema } = types;
 const { httpPost } = http;
 
+const logger = baseLogger.child({ service: 'gateway' });
+
 const app = Fastify({
-  logger: true, // ✅ Fastify 기본 로거 사용
+  logger,
 });
-const logger = app.log;
 
 // 헬스체크
 app.get('/health', async () => ({ ok: true }));
