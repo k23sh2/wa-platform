@@ -7,7 +7,7 @@
     "services/*"
   ],
   "scripts": {
-    "dev": "concurrently -n gateway,orchestrator -c cyan,magenta \"pnpm --filter @wa/gateway dev\" \"pnpm --filter @wa/orchestrator dev\"",
+    "dev": "TZ=Asia/Seoul concurrently -n gateway,orchestrator -c cyan,magenta \"pnpm --filter @wa/gateway dev\" \"pnpm --filter @wa/orchestrator dev\"",
     "build": "pnpm -r build",
     "prisma:generate": "pnpm --filter @wa/db prisma:generate",
     "prisma:migrate": "pnpm --filter @wa/db prisma:migrate"
