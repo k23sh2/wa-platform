@@ -4,14 +4,9 @@ import proxy from '@fastify/http-proxy';
 import { createLogger } from '@wa/logger';
 
 // 전부 src 기준 namespace import
-import * as envModule from '../../../packages/config/src/index';
+import { env } from '@wa/config';
 import * as types from '../../../packages/types/src/index';
 import * as http from '../../../packages/http/src/index';
-
-const env =
-  (envModule as any).env ??
-  (envModule as any).default?.env ??
-  envModule;
 
 const { MessageCreateSchema } = types;
 const { httpPost } = http;

@@ -12,7 +12,7 @@ type Env = {
   LOG_LEVEL: string;
 };
 
-const env: Env = {
+export const env: Env = {
   NODE_ENV: process.env.NODE_ENV ?? 'development',
   SERVICE_BASE_URL: process.env.SERVICE_BASE_URL ?? 'http://localhost',
   GATEWAY_PORT: Number(process.env.GATEWAY_PORT ?? '3000'),
@@ -20,9 +20,5 @@ const env: Env = {
   DATABASE_URL:
     process.env.DATABASE_URL ??
     'postgresql://wauser:wapass@localhost:5432/wa_platform?schema=public',
-    LOG_LEVEL: "info"
+  LOG_LEVEL: process.env.LOG_LEVEL ?? 'info',
 };
-
-export default env;
-export { env };
-export type { Env };

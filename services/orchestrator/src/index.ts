@@ -7,16 +7,12 @@ import {
   ZodTypeProvider,
 } from 'fastify-type-provider-zod';
 
-import * as envModule from '../../../packages/config/src/index';
+import { env } from '@wa/config';
 import * as dbModule from '../../../packages/db/src/index';
 import * as types from '../../../packages/types/src/index';
 import type { MessageCreate } from '../../../packages/types/src/index';
 import { createLogger } from '@wa/logger';
 
-const env =
-  (envModule as any).env ??
-  (envModule as any).default.env ??
-  envModule;
 const logger = createLogger({ service: 'orchestrator' });
 logger.info({ env }, "FINAL ENV →");
 

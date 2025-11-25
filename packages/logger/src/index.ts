@@ -42,7 +42,7 @@ export function createLogger({ service }: LoggerProps) {
           options: {
             colorize: true,
             // 🔹 time은 우리가 직접 포맷했으니 다시 translateTime 할 필요 없음
-            ignore: 'pid,hostname',
+            ignore: 'pid,hostname,service',
           },
         },
   });
