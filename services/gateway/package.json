@@ -9,12 +9,13 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "fastify": "^5.0.0",
     "@fastify/http-proxy": "^10.0.2",
     "@wa/config": "workspace:*",
-    "@wa/logger": "workspace:*",
     "@wa/http": "workspace:*",
-    "@wa/types": "workspace:*"
+    "@wa/logger": "workspace:*",
+    "@wa/types": "workspace:*",
+    "axios": "^1.13.2",
+    "fastify": "^5.0.0"
   },
   "devDependencies": {
     "tsx": "^4.19.2",

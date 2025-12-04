@@ -9,15 +9,17 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "fastify": "^5.0.0",
-    "fastify-type-provider-zod": "^4.0.0",
     "@wa/config": "workspace:*",
-    "@wa/logger": "workspace:*",
     "@wa/db": "workspace:*",
     "@wa/http": "workspace:*",
-    "@wa/types": "workspace:*"
+    "@wa/logger": "workspace:*",
+    "@wa/types": "workspace:*",
+    "axios": "^1.13.2",
+    "fastify": "^5.0.0",
+    "fastify-type-provider-zod": "^4.0.0"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.4",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3"
   }
